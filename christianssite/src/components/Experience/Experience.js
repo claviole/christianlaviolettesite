@@ -56,7 +56,15 @@ const Experience = () => {
   );
 };
 
-// Styled components
-// ... styled components definitions
+const ExperienceSection = styled.section`
+  padding: var(--spacing-xl) 0;
+`;
+
+const SectionHeading = styled.h2`
+  font-size: 2.2rem;
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+  color: ${(props) => props.theme.text};
+`;
 
 export default Experience;

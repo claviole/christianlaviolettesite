@@ -1,0 +1,115 @@
+/* Projects Page Styles */
+.projects-section {
+  position: relative;
+}
+
+.projects-section::before {
+  content: "<projects>";
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: var(--font-code);
+  color: var(--primary-color);
+  opacity: 0.1;
+  font-size: 2rem;
+}
+
+.projects-section::after {
+  content: "</projects>";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-family: var(--font-code);
+  color: var(--primary-color);
+  opacity: 0.1;
+  font-size: 2rem;
+}
+
+/* Filter buttons animation */
+.filter-button {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.filter-button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.filter-button:hover::after,
+.filter-button.active::after {
+  width: 100%;
+}
+
+.filter-button.active {
+  color: var(--primary-color);
+}
+
+/* Project card hover effects */
+.project-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Project image zoom effect */
+.project-image-container {
+  overflow: hidden;
+}
+
+.project-image {
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+/* Technology tags animation */
+.tech-tag {
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.tech-tag:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Project links animation */
+.project-link svg {
+  transition: transform 0.3s ease;
+}
+
+.project-link:hover svg {
+  transform: translateY(-3px) rotate(-10deg);
+}
+
+/* Projects grid animation */
+.projects-grid {
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

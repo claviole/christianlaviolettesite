@@ -54,7 +54,28 @@ const Skills = () => {
   );
 };
 
-// Styled components
-// ... styled components definitions
+const SkillsSection = styled.section`
+  padding: var(--spacing-xl) 0;
+`;
+
+const SectionHeading = styled.h2`
+  font-size: 2.2rem;
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+  color: ${(props) => props.theme.text};
+`;
+
+const SkillsContainer = styled.div`
+  max-width: 1000px;
+  margin: 0 auto;
+`;
+
+const SkillsVisualization = styled.div`
+  margin-top: var(--spacing-xl);
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 export default Skills;

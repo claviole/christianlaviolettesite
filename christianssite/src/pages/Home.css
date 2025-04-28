@@ -1,0 +1,103 @@
+/* Home Page Styles */
+.home-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.home-section::before {
+  content: "<home>";
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: var(--font-code);
+  color: var(--primary-color);
+  opacity: 0.1;
+  font-size: 2rem;
+}
+
+.home-section::after {
+  content: "</home>";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-family: var(--font-code);
+  color: var(--primary-color);
+  opacity: 0.1;
+  font-size: 2rem;
+}
+
+/* Animated background gradient */
+.gradient-bg {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(110, 87, 224, 0.1) 0%,
+    rgba(0, 217, 255, 0.05) 25%,
+    rgba(10, 25, 47, 0) 50%
+  );
+  z-index: -1;
+  animation: rotate 30s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Highlight item animation */
+.highlight-item {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.highlight-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Highlight value counter animation */
+.highlight-value {
+  position: relative;
+}
+
+.highlight-value.animate {
+  animation: countUp 2s ease-out forwards;
+}
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Featured project hover effects */
+.featured-project {
+  transition: transform 0.3s ease;
+}
+
+.featured-project:hover {
+  transform: translateY(-5px);
+}
+
+/* View all link animation */
+.view-all-link svg {
+  transition: transform 0.3s ease;
+}
+
+.view-all-link:hover svg {
+  transform: translateX(5px);
+}

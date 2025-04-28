@@ -1,0 +1,121 @@
+/* Skills Page Styles */
+.skills-section {
+  position: relative;
+}
+
+.skills-section::before {
+  content: "<skills>";
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: var(--font-code);
+  color: var(--primary-color);
+  opacity: 0.1;
+  font-size: 2rem;
+}
+
+.skills-section::after {
+  content: "</skills>";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-family: var(--font-code);
+  color: var(--primary-color);
+  opacity: 0.1;
+  font-size: 2rem;
+}
+
+/* Skill bar animation */
+.skill-bar {
+  position: relative;
+  height: 10px;
+  background: var(--background-light);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  border-radius: 5px;
+  width: 0;
+  transition: width 1.5s ease-in-out;
+}
+
+/* Skill category hover effect */
+.skill-category {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.skill-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Skill icon animation */
+.skill-icon {
+  transition: transform 0.3s ease;
+}
+
+.skill-item:hover .skill-icon {
+  transform: scale(1.2) rotate(10deg);
+}
+
+/* Skill level number count-up animation */
+.skill-level {
+  position: relative;
+}
+
+.skill-level.animate {
+  animation: countUp 2s ease-out forwards;
+}
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Skill visualization animation */
+.skills-visualization {
+  transition: transform 0.5s ease;
+}
+
+.skills-visualization:hover {
+  transform: scale(1.05);
+}
+
+/* Category title animation */
+.category-title {
+  position: relative;
+  display: inline-block;
+}
+
+.category-title::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.skill-category:hover .category-title::after {
+  width: 100%;
+}

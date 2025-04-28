@@ -1,0 +1,101 @@
+/* Experience Page Styles */
+.experience-section {
+  position: relative;
+}
+
+.experience-section::before {
+  content: "<experience>";
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: var(--font-code);
+  color: var(--primary-color);
+  opacity: 0.1;
+  font-size: 2rem;
+}
+
+.experience-section::after {
+  content: "</experience>";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-family: var(--font-code);
+  color: var(--primary-color);
+  opacity: 0.1;
+  font-size: 2rem;
+}
+
+/* Timeline vertical line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 20px;
+  width: 2px;
+  background: var(--primary-color);
+  opacity: 0.3;
+}
+
+/* Timeline item hover effects */
+.timeline-item {
+  transition: transform 0.3s ease;
+}
+
+.timeline-item:hover {
+  transform: translateX(5px);
+}
+
+/* Year marker pulse effect */
+.year-marker::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: var(--primary-color);
+  border-radius: 50%;
+  opacity: 0.3;
+  z-index: -1;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  70% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+}
+
+/* Company/institution tag styles */
+.company-tag {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 12px;
+  background: var(--background-light);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-left: 8px;
+}
+
+/* Education marker */
+.education-marker {
+  background: var(--secondary-color);
+  color: var(--background);
+}
+
+/* Work marker */
+.work-marker {
+  background: var(--primary-color);
+  color: var(--background);
+}

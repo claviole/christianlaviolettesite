@@ -1,0 +1,60 @@
+/* Projects Component Styles */
+.filter-button {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.filter-button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.filter-button:hover::after,
+.filter-button.active::after {
+  width: 100%;
+}
+
+.filter-button.active {
+  color: var(--primary-color);
+}
+
+/* Project image zoom effect */
+.project-image-container {
+  overflow: hidden;
+}
+
+.project-image {
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+/* Animation for filtering */
+.projects-grid {
+  transition: opacity 0.5s ease;
+}
+
+/* Project card reveal animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project-card {
+  animation: fadeIn 0.5s ease;
+}

@@ -1,0 +1,25 @@
+/* Additional Navbar Styling */
+.navbar {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.navbar.scrolled {
+  background-color: rgba(17, 34, 64, 0.85); /* Dark theme default */
+}
+
+/* Theme transitions */
+.icon {
+  transition: transform 0.5s ease;
+}
+
+/* Mobile menu transitions */
+@media (max-width: 768px) {
+  .navbar.scrolled {
+    background-color: rgba(17, 34, 64, 0.95);
+  }
+
+  .nav-links {
+    transition: right 0.3s ease;
+  }
+}

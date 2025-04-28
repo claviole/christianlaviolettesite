@@ -17,7 +17,7 @@ const Projects = () => {
       technologies: ["React", "Firebase", "JavaScript"],
       category: "web",
       link: "https://partoftheirworld.com",
-      github: "https://github.com/yourusername/partoftheirworld",
+      github: "https://github.com/claviole/partoftheirworld",
     },
     {
       id: 2,
@@ -27,7 +27,7 @@ const Projects = () => {
       image: "/assets/projects/campusmap.jpg",
       technologies: ["React", "Firebase", "JavaScript", "Google Maps API"],
       category: "web",
-      github: "https://github.com/yourusername/campus-map",
+      github: "https://github.com/claviole/campus-map",
     },
     {
       id: 3,
@@ -37,7 +37,7 @@ const Projects = () => {
       image: "/assets/projects/musicgenre.jpg",
       technologies: ["PyTorch", "FastAI", "Python", "Machine Learning"],
       category: "ai",
-      github: "https://github.com/yourusername/music-genre-id",
+      github: "https://github.com/claviole/music-genre-id",
     },
     {
       id: 4,
@@ -58,23 +58,26 @@ const Projects = () => {
 
   return (
     <ProjectsSection>
-      <SectionHeading>My Projects</SectionHeading>
+      <SectionHeading>Projects & Work</SectionHeading>
 
       <FilterContainer>
         <FilterButton
-          active={filter === "all"}
+          className={filter === "all" ? "active" : ""}
           onClick={() => setFilter("all")}
         >
-          All
+          All Projects
         </FilterButton>
         <FilterButton
-          active={filter === "web"}
+          className={filter === "web" ? "active" : ""}
           onClick={() => setFilter("web")}
         >
           Web Development
         </FilterButton>
-        <FilterButton active={filter === "ai"} onClick={() => setFilter("ai")}>
-          AI/Machine Learning
+        <FilterButton
+          className={filter === "ai" ? "active" : ""}
+          onClick={() => setFilter("ai")}
+        >
+          AI & Machine Learning
         </FilterButton>
       </FilterContainer>
 
@@ -87,7 +90,43 @@ const Projects = () => {
   );
 };
 
-// Styled components
-// ... styled components definitions
+const ProjectsSection = styled.section`
+  padding: var(--spacing-xl) 0;
+`;
+
+const SectionHeading = styled.h2`
+  font-size: 2.2rem;
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+  color: ${(props) => props.theme.text};
+`;
+
+const FilterContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--spacing-xl);
+  flex-wrap: wrap;
+  gap: 1rem;
+`;
+
+const FilterButton = styled.button`
+  background: transparent;
+  border: none;
+  color: ${(props) => props.theme.textSecondary};
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+
+  &.active {
+    color: ${(props) => props.theme.primary};
+  }
+`;
+
+const ProjectsGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--spacing-lg);
+`;
 
 export default Projects;
