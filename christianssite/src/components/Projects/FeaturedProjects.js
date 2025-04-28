@@ -12,7 +12,7 @@ const FeaturedProjects = () => {
       title: "Part Of Their World LLC",
       description:
         "Web application for an Ohio-based party planning company that serves both as a client-facing website and an internal management tool for scheduling, booking, and employee management.",
-      image: "/assets/projects/christiananddimitra.jpg",
+      image: "/assets/projects/potw.jpg",
       technologies: ["React", "Firebase", "JavaScript"],
       category: "web",
       link: "https://partoftheirworld.com",
@@ -23,7 +23,7 @@ const FeaturedProjects = () => {
       title: "Wedding Website",
       description:
         "A website I created for my wedding that includes a timeline, gallery, registry, and more.",
-      image: "/assets/projects/partoftheirworld.jpg",
+      image: "/assets/projects/christiananddimitra.jpg",
       technologies: ["React", "Firebase", "JavaScript"],
       category: "web",
       link: "https://christiananddimitra.com",

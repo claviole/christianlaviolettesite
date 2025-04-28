@@ -7,8 +7,9 @@ import { FaArrowRight } from "react-icons/fa";
 const SkillsShowcase = () => {
   const categories = [
     {
-      name: "AI & Machine Learning",
-      icon: "/assets/icons/ai.svg",
+      name: "",
+      icon: "/assets/icons/AIMLIcon.png",
+      imageContainsText: true,
       skills: [
         "Neural Networks",
         "Computer Vision",
@@ -18,7 +19,8 @@ const SkillsShowcase = () => {
     },
     {
       name: "Web Development",
-      icon: "/assets/icons/web.svg",
+      icon: "/assets/icons/WebDevIcon.png",
+      imageContainsText: true,
       skills: [
         "React",
         "JavaScript",
@@ -29,7 +31,8 @@ const SkillsShowcase = () => {
     },
     {
       name: "Backend Development",
-      icon: "/assets/icons/backend.svg",
+      icon: "/assets/icons/BackendIcon.png",
+      imageContainsText: true,
       skills: ["Python", "PHP", "MySQL", "NoSQL", "API Development"],
     },
   ];
@@ -51,8 +54,18 @@ const SkillsShowcase = () => {
             data-aos="fade-up"
             data-aos-delay={index * 100}
           >
-            <CategoryIcon src={category.icon} alt={category.name} />
-            <CategoryName>{category.name}</CategoryName>
+            <CategoryIcon
+              src={category.icon}
+              alt={category.name || "AI & Machine Learning"}
+              style={
+                category.imageContainsText
+                  ? { width: "160px", height: "auto" }
+                  : {}
+              }
+            />
+            {!category.imageContainsText && (
+              <CategoryName>{category.name}</CategoryName>
+            )}
             <SkillsList>
               {category.skills.map((skill, i) => (
                 <SkillItem key={i}>
