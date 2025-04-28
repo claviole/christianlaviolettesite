@@ -23,10 +23,11 @@ const FeaturedProjects = () => {
       title: "Wedding Website",
       description:
         "A website I created for my wedding that includes a timeline, gallery, registry, and more.",
-      image: "/assets/projects/weddingwebsite.jpg",
+      image: "/assets/projects/christiananddimitra.jpg",
       technologies: ["React", "Firebase", "JavaScript"],
       category: "web",
-      github: "https://github.com/claviole/wedding-website",
+      link: "https://christiananddimitra.com",
+      github: "https://github.com/claviole/wedding_site",
     },
   ];
 
