@@ -13,20 +13,20 @@ const FeaturedProjects = () => {
       description:
         "Web application for an Ohio-based party planning company that serves both as a client-facing website and an internal management tool for scheduling, booking, and employee management.",
       image: "/assets/projects/partoftheirworld.jpg",
-      technologies: ["React", "Firebase", "JavaScript", "Responsive Design"],
+      technologies: ["React", "Firebase", "JavaScript"],
       category: "web",
       link: "https://partoftheirworld.com",
       github: "https://github.com/claviole/partoftheirworld",
     },
     {
       id: 3,
-      title: "Music Genre Identification",
+      title: "Wedding Website",
       description:
-        "Machine learning model that identifies music genres from artist images with 87% accuracy, trained on a dataset of 20,000 images. Demonstrates the intersection of computer vision and music classification.",
-      image: "/assets/projects/musicgenre.jpg",
-      technologies: ["PyTorch", "FastAI", "Python", "Machine Learning"],
-      category: "ai",
-      github: "https://github.com/claviole/music-genre-id",
+        "A website I created for my wedding that includes a timeline, gallery, registry, and more.",
+      image: "/assets/projects/weddingwebsite.jpg",
+      technologies: ["React", "Firebase", "JavaScript"],
+      category: "web",
+      github: "https://github.com/claviole/wedding-website",
     },
   ];
 

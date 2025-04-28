@@ -63,14 +63,6 @@ const Navbar = ({ theme, toggleTheme }) => {
         </NavLinks>
 
         <NavRight>
-          <ThemeToggle onClick={toggleTheme}>
-            {theme === "dark" ? (
-              <FaSun className="icon" />
-            ) : (
-              <FaMoon className="icon" />
-            )}
-          </ThemeToggle>
-
           <MobileMenuButton onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             {mobileMenuOpen ? <FaTimes /> : <FaBars />}
           </MobileMenuButton>
