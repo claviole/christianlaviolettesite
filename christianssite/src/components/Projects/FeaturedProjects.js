@@ -23,7 +23,7 @@ const FeaturedProjects = () => {
       title: "Wedding Website",
       description:
         "A website I created for my wedding that includes a timeline, gallery, registry, and more.",
-      image: "/assets/projects/christiananddimitra.jpg",
+      image: "/assets/projects/partoftheirworld.jpg",
       technologies: ["React", "Firebase", "JavaScript"],
       category: "web",
       link: "https://christiananddimitra.com",
