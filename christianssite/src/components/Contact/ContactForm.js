@@ -1,7 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import {
+  collection,
+  addDoc,
+  serverTimestamp,
+  doc,
+  onSnapshot,
+} from "firebase/firestore";
 import { db } from "../../firebase/config";
 import "./ContactForm.css";
 
@@ -15,6 +21,22 @@ const ContactForm = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formStatus, setFormStatus] = useState(null);
+  const [submissionId, setSubmissionId] = useState(null);
+
+  useEffect(() => {
+    if (!submissionId) return;
+
+    const unsubscribe = onSnapshot(doc(db, "contacts", submissionId), (doc) => {
+      if (doc.exists() && doc.data().processed) {
+        setFormStatus({
+          success: true,
+          message: "Message received! We'll get back to you soon.",
+        });
+      }
+    });
+
+    return () => unsubscribe();
+  }, [submissionId]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,11 +48,13 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      await addDoc(collection(db, "contacts"), {
+      const docRef = await addDoc(collection(db, "contacts"), {
         ...formData,
         timestamp: serverTimestamp(),
+        processed: false,
       });
 
+      setSubmissionId(docRef.id);
       setFormStatus({ success: true, message: "Message sent successfully!" });
       setFormData({ name: "", email: "", subject: "", message: "" });
     } catch (error) {
