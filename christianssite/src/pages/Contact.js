@@ -39,15 +39,15 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      await addDoc(collection(db, "messages"), {
+      const docRef = await addDoc(collection(db, "contacts"), {
         ...formData,
-        createdAt: serverTimestamp(),
+        timestamp: serverTimestamp(),
+        processed: false,
       });
 
       setSubmitStatus({
         success: true,
-        message:
-          "Your message has been sent! I'll respond as soon as possible.",
+        message: "Message sent successfully!",
       });
 
       // Reset form
@@ -59,9 +59,14 @@ const Contact = () => {
       });
     } catch (error) {
       console.error("Error sending message:", error);
+      // Log more details about the error
+      console.error("Error code:", error.code);
+      console.error("Error message:", error.message);
+      console.error("Error details:", error.details);
+
       setSubmitStatus({
         success: false,
-        message: "There was an error sending your message. Please try again.",
+        message: `Error sending message: ${error.message}. Please try again later.`,
       });
     } finally {
       setIsSubmitting(false);
