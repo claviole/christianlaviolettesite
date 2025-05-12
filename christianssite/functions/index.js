@@ -8,7 +8,7 @@ admin.initializeApp();
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "your-email@gmail.com", // Your email address
+    user: "claviolette.tech@gmail.com", // Your email address
     pass: functions.config().gmail.password, // Set up with firebase functions:config:set gmail.password="yourpassword"
   },
 });
@@ -20,8 +20,8 @@ exports.sendContactNotification = functions.firestore
 
     // Email content
     const mailOptions = {
-      from: "Your Portfolio <your-email@gmail.com>",
-      to: "your-email@gmail.com", // Where to send notifications
+      from: "Christian Laviolette <claviolette.tech@gmail.com>",
+      to: "christianlaviolette@outlook.com", // Where to send notifications
       subject: `New Contact Form Submission: ${contactData.subject}`,
       html: `
         <h2>New contact form submission from your portfolio website</h2>
