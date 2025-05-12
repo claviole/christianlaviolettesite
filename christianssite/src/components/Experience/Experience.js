@@ -11,6 +11,13 @@ const Experience = () => {
 
       <Timeline>
         <TimelineItem
+          year="2024-Present"
+          title="M.S. in Artificial Intelligence"
+          company="Purdue University"
+          location="West Lafayette, IN"
+          isEducation={true}
+        />
+        <TimelineItem
           year="2023-Present"
           title="Software Engineer"
           company="Target Metal Blanking"
@@ -23,6 +30,13 @@ const Experience = () => {
             "Automated reporting and data processing with Python",
           ]}
         />
+        <TimelineItem
+          year="Completed"
+          title="B.S. in Computer Science"
+          company="Purdue University Northwest"
+          location="Hammond, IN"
+          isEducation={true}
+        />
 
         <TimelineItem
           year="2016-2023"
@@ -34,22 +48,6 @@ const Experience = () => {
             "Oversaw customer-focused environment across two locations",
             "Led inventory management and staff training initiatives",
           ]}
-        />
-
-        <TimelineItem
-          year="Currently Enrolled"
-          title="M.S. in Artificial Intelligence"
-          company="Purdue University"
-          location="West Lafayette, IN"
-          isEducation={true}
-        />
-
-        <TimelineItem
-          year="Completed"
-          title="B.S. in Computer Science"
-          company="Purdue University Northwest"
-          location="Hammond, IN"
-          isEducation={true}
         />
       </Timeline>
     </ExperienceSection>

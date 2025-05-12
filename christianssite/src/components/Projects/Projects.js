@@ -13,41 +13,68 @@ const Projects = () => {
       title: "Part Of Their World LLC",
       description:
         "Web application for an Ohio-based party planning company that serves both as a client-facing website and an internal management tool.",
-      image: "/assets/projects/partoftheirworld.jpg",
+      image: "/assets/projects/potw.jpg",
       technologies: ["React", "Firebase", "JavaScript"],
       category: "web",
       link: "https://partoftheirworld.com",
-      github: "https://github.com/claviole/partoftheirworld",
     },
     {
       id: 2,
-      title: "Campus Map Design Project",
+      title: "Wedding Website",
       description:
-        "Led a team of 12 students in developing an interactive campus map for the university.",
-      image: "/assets/projects/campusmap.jpg",
-      technologies: ["React", "Firebase", "JavaScript", "Google Maps API"],
+        "A website I created for my wedding that includes a timeline, gallery, registry, and more.",
+      image: "/assets/projects/christiananddimitra.jpg",
+      technologies: ["React", "Firebase", "JavaScript"],
       category: "web",
-      github: "https://github.com/claviole/campus-map",
+      github: "https://github.com/claviole/wedding_site",
+    },
+    {
+      id: 5,
+      title: "Inventory Filter",
+      description:
+        "This is a python program written for TMB that accepts a company specific inventory sheet and then filters and calculates total inventory based upon the age of the inventory . This program was designed to help manage aged inventory and prevent the use of Out of Date inventory.",
+      image: "/assets/projects/automation.png",
+      technologies: ["Python", "Automation", "Data Processing", "Excel"],
+      category: "automation",
+      github: "https://github.com/claviole/InventoryFilter",
+    },
+    {
+      id: 7,
+      title: "PPH Calculator",
+      description:
+        "This is a python program written for TMB to accept a .txt file produced by MIS and scan through to grab pieces reported in the file and sort them by month to generate an excel document which list Parts Per Hour by month as well as provide a total.",
+      image: "/assets/projects/automation.png",
+      technologies: ["Python", "Automation", "Data Processing"],
+      category: "automation",
+      github: "https://github.com/claviole/PPHCalculator",
     },
     {
       id: 3,
-      title: "Music Genre Identification",
+      title: "Target Metal Sync",
       description:
-        "Trained a model to predict music genres based on artist images with 87% accuracy using a dataset of 20,000 images.",
-      image: "/assets/projects/musicgenre.jpg",
-      technologies: ["PyTorch", "FastAI", "Python", "Machine Learning"],
+        "A web based ERP application built for TMB to help manage all aspects of the company's operations from production reporting up to HR functionalities also containing built in AI assistants",
+      image: "/assets/projects/targetmetalsync.png",
+      technologies: ["PHP", "MySQL", "JavaScript", "HTML", "CSS", "API"],
+      category: "web",
+    },
+    {
+      id: 6,
+      title: "MISAI",
+      description:
+        "A desktop application built for TMB using OpenAI's assistant API and trained on custom made MIS training data to help assist both new and existing employees with any questions they may have about a rather complex ERP system called MIS.",
+      image: "/assets/projects/misai.png",
+      technologies: ["OpenAI", "API", "Tauri", "MySQL", "JavaScript", "Java"],
       category: "ai",
-      github: "https://github.com/claviole/music-genre-id",
     },
     {
       id: 4,
-      title: "Image Generation with CGANs",
+      title: "TMB Company Website",
       description:
-        "Developed and trained a CGAN from scratch to generate high-quality 720x720 images of various environments.",
-      image: "/assets/projects/imagegen.jpg",
-      technologies: ["PyTorch", "TensorFlow", "CGANs", "Python"],
-      category: "ai",
-      github: "https://github.com/yourusername/image-generation",
+        "A website I created for my current employer that provides services within the steel service center industry.",
+      image: "/assets/projects/tmb-site.png",
+      technologies: ["React", "Firebase", "JavaScript"],
+      category: "web",
+      link: "https://tmb-site.web.app",
     },
   ];
 
@@ -78,6 +105,12 @@ const Projects = () => {
           onClick={() => setFilter("ai")}
         >
           AI & Machine Learning
+        </FilterButton>
+        <FilterButton
+          className={filter === "automation" ? "active" : ""}
+          onClick={() => setFilter("automation")}
+        >
+          Automation
         </FilterButton>
       </FilterContainer>
 

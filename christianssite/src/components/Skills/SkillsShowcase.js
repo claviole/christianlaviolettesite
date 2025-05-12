@@ -15,19 +15,16 @@ const SkillsShowcase = () => {
         "Computer Vision",
         "Natural Language Processing",
         "Model Deployment",
+        "Deep Learning",
+        "Machine Learning",
+        "FastAI",
       ],
     },
     {
       name: "Web Development",
       icon: "/assets/icons/WebDevIcon.png",
       imageContainsText: true,
-      skills: [
-        "React",
-        "JavaScript",
-        "Node.js",
-        "Firebase",
-        "Responsive Design",
-      ],
+      skills: ["React", "JavaScript", "Node.js", "Firebase"],
     },
     {
       name: "Backend Development",

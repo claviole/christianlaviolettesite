@@ -46,13 +46,7 @@ const Home = () => {
               <HighlightItem data-aos="fade-up" data-aos-delay="400">
                 <HighlightValue>50%</HighlightValue>
                 <HighlightLabel>Efficiency</HighlightLabel>
-                <HighlightDesc>Through automation</HighlightDesc>
-              </HighlightItem>
-
-              <HighlightItem data-aos="fade-up" data-aos-delay="500">
-                <HighlightValue>87%</HighlightValue>
-                <HighlightLabel>Accuracy</HighlightLabel>
-                <HighlightDesc>In ML models</HighlightDesc>
+                <HighlightDesc>Gained through automation</HighlightDesc>
               </HighlightItem>
             </Highlights>
           </AboutContent>

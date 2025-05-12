@@ -29,6 +29,16 @@ const FeaturedProjects = () => {
       link: "https://christiananddimitra.com",
       github: "https://github.com/claviole/wedding_site",
     },
+    {
+      id: 4,
+      title: "TMB Company Website",
+      description:
+        "A website I created for my current employer that provides services within the steel service center industry.",
+      image: "/assets/projects/tmb-site.png",
+      technologies: ["React", "Firebase", "JavaScript"],
+      category: "web",
+      link: "https://tmb-site.web.app",
+    },
   ];
 
   return (

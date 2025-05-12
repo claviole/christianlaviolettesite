@@ -47,12 +47,11 @@ const About = () => {
             </p>
             <p>
               When I'm not coding, I enjoy staying up-to-date with the latest
-              developments in AI research, exploring new technologies, and
-              contributing to open-source projects.
+              developments in AI research and exploring new technologies.
             </p>
 
             <ResumeButton
-              href="/assets/Christian_Laviolette_Resume.pdf"
+              href="/assets/Christian Laviolette Resume Final.pdf"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
@@ -63,7 +62,7 @@ const About = () => {
           </AboutContent>
 
           <AboutImageSection data-aos="fade-up" data-aos-delay="400">
-            <AboutImage src="/assets/profile.jpg" alt="Christian Laviolette" />
+            <AboutImage src="/assets/profile.jpeg" alt="Christian Laviolette" />
             <AboutStats>
               <StatItem>
                 <StatIcon>
@@ -166,9 +165,13 @@ const AboutImageSection = styled.div`
 `;
 
 const AboutImage = styled.img`
-  width: 100%;
-  height: auto;
-  border-radius: var(--border-radius);
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  margin: 0 auto;
+  display: block;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 `;
 

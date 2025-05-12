@@ -16,9 +16,12 @@ export const TimelineItem = ({
 }) => {
   return (
     <TimelineItemContainer data-aos="fade-up">
-      <YearMarker className={isEducation ? "education-marker" : "work-marker"}>
+      <YearMarker
+        className={isEducation ? "education-marker" : "work-marker"}
+      />
+      <TimelineDate className={isEducation ? "education" : "work"}>
         {year}
-      </YearMarker>
+      </TimelineDate>
       <TimelineContent>
         <TimelineHeader>
           <TimelineTitle>{title}</TimelineTitle>
@@ -88,28 +91,51 @@ const YearMarker = styled.div`
   position: absolute;
   left: 0;
   top: 0;
-  width: 36px;
-  height: 36px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   background: ${(props) => props.theme.primary};
-  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
-  font-size: 0.75rem;
   z-index: 2;
+  border: 3px solid ${(props) => props.theme.backgroundBody || "#121212"};
 
   &.education-marker {
     background: ${(props) => props.theme.secondary};
   }
 
   @media (min-width: 768px) {
-    left: -18px;
+    left: -8px;
 
     ${TimelineItemContainer}:nth-child(even) & {
       left: auto;
-      right: -18px;
+      right: -8px;
+    }
+  }
+`;
+
+const TimelineDate = styled.div`
+  position: absolute;
+  left: 30px;
+  top: -5px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: ${(props) => props.theme.primary};
+
+  &.education {
+    color: ${(props) => props.theme.secondary};
+  }
+
+  @media (min-width: 768px) {
+    left: -160px;
+    width: 140px;
+    text-align: right;
+
+    ${TimelineItemContainer}:nth-child(even) & {
+      left: auto;
+      right: -160px;
+      text-align: left;
     }
   }
 `;
