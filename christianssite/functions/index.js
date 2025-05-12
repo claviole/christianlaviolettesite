@@ -9,7 +9,7 @@ const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
     user: "claviolette.tech@gmail.com", // Your email address
-    pass: functions.config().gmail.password, // Set up with firebase functions:config:set gmail.password="yourpassword"
+    pass: "xofstjzoaucyhaoe",
   },
 });
 
