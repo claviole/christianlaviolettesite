@@ -9,14 +9,21 @@ import Loader from "./components/UI/Loader";
 import ParticlesBackground from "./components/UI/ParticlesBackground";
 import "./App.css";
 
-// Lazy load pages for better performance
+// Replace your lazy imports:
+/*
 const Home = React.lazy(() => import("./pages/Home"));
 const About = React.lazy(() => import("./pages/About"));
-const Projects = React.lazy(() => import("./pages/Projects"));
-const Experience = React.lazy(() => import("./pages/Experience"));
-const Skills = React.lazy(() => import("./pages/Skills"));
-const Contact = React.lazy(() => import("./pages/Contact"));
-const NotFound = React.lazy(() => import("./pages/NotFound"));
+// etc...
+*/
+
+// With direct imports for production:
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Projects from "./pages/Projects";
+import Experience from "./pages/Experience";
+import Skills from "./pages/Skills";
+import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
 
 function App() {
   const [theme, setTheme] = useState("dark");
@@ -62,17 +69,15 @@ function App() {
           <Navbar theme={theme} toggleTheme={toggleTheme} />
           <main className="main-content">
             <AnimatePresence mode="wait">
-              <Suspense fallback={<Loader />}>
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/projects" element={<Projects />} />
-                  <Route path="/experience" element={<Experience />} />
-                  <Route path="/skills" element={<Skills />} />
-                  <Route path="/contact" element={<Contact />} />
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
-              </Suspense>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/projects" element={<Projects />} />
+                <Route path="/experience" element={<Experience />} />
+                <Route path="/skills" element={<Skills />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
             </AnimatePresence>
           </main>
           <Footer />

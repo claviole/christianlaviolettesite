@@ -11,12 +11,14 @@ module.exports = function override(config, env) {
       splitStrings: true,
       identifierNamesGenerator: "hexadecimal",
       compact: true,
-      controlFlowFlattening: true,
-      controlFlowFlatteningThreshold: 0.5,
-      deadCodeInjection: true,
-      deadCodeInjectionThreshold: 0.3,
+      deadCodeInjection: false,
+      controlFlowFlattening: false,
+      selfDefending: false,
+      disableConsoleOutput: false,
       debugProtection: false,
-      selfDefending: true,
+      reservedNames: ["React", "react", "useState", "useEffect", "useRef"],
+      reservedStrings: ["\\s*function\\s*\\(\\)"],
+      domainLock: [],
     });
 
     config.plugins.push(obfuscatorPlugin);
